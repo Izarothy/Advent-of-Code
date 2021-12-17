@@ -1,3 +1,10 @@
+const fs = require('fs');
+let depthMeasurements = [];
+const allFileContents = fs.readFileSync('Files/dayOneInput.txt', 'utf-8');
+allFileContents.split(/\r?\n/).forEach(line =>  {
+  depthMeasurements.push(line);
+});
+
 function countDepthIncreases (depthMeasurements) {
     // Vars
     let numberOfDepthIncreases = 0;
@@ -14,4 +21,4 @@ function countDepthIncreases (depthMeasurements) {
     return numberOfDepthIncreases;
 }
 
-console.log(countDepthIncreases([199, 200, 208, 210, 200, 207, 240, 269, 260, 263]));
+console.log(countDepthIncreases(depthMeasurements));
